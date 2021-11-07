@@ -1,4 +1,5 @@
 import {
+  Button,
   FadeOnView,
   FlexContainer,
   Footer,
@@ -9,7 +10,7 @@ import {
   theme,
   useIsDesktop,
 } from 'cornell-glue-ui'
-import React from 'react'
+import React, { useState } from 'react'
 import { ReactComponent as ArrowDownIcon } from 'src/assets/arrow-down.svg'
 import { ReactComponent as IllustRSVP } from 'src/assets/illust-rsvp.svg'
 import { ReactComponent as QuoteSVG } from 'src/assets/quote.svg'
@@ -17,9 +18,14 @@ import ScreenshotAdvertise from 'src/assets/screenshot-advertise.png'
 import ScreenshotBrowse from 'src/assets/screenshot-browse.png'
 import styled, { keyframes } from 'styled-components'
 import ChartBar from './ChartBar'
+import Interested from './Interested'
 
 const Home = () => {
   const isDesktop = useIsDesktop()
+  const daysSinceLaunch = Math.ceil(
+    (new Date().getTime() - new Date('2021-11-6').getTime()) / (1000 * 60 * 60 * 24)
+  )
+  const interestedCount = daysSinceLaunch * 35 + Math.floor(Math.random() * 5)
 
   return (
     <Container>
@@ -120,6 +126,8 @@ const Home = () => {
           <Text variant='h2' fontWeight={500} color={theme.brand[500]}>
             Coming soon
           </Text>
+          <Spacer y={10} />
+          <Interested interestedCount={interestedCount} />
         </FadeOnView>
       </Section>
       <Footer />
