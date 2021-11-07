@@ -1,20 +1,20 @@
 import {
   FadeOnView,
-  Spacer,
-  Text,
-  theme,
-  Span,
-  Showcase,
   FlexContainer,
   Footer,
+  Showcase,
+  Spacer,
+  Span,
+  Text,
+  theme,
   useIsDesktop,
 } from 'cornell-glue-ui'
-import { ReactComponent as QuoteSVG } from 'src/assets/quote.svg'
+import React from 'react'
 import { ReactComponent as ArrowDownIcon } from 'src/assets/arrow-down.svg'
 import { ReactComponent as IllustRSVP } from 'src/assets/illust-rsvp.svg'
-import ScreenshotBrowse from 'src/assets/screenshot-browse.png'
+import { ReactComponent as QuoteSVG } from 'src/assets/quote.svg'
 import ScreenshotAdvertise from 'src/assets/screenshot-advertise.png'
-import React from 'react'
+import ScreenshotBrowse from 'src/assets/screenshot-browse.png'
 import styled, { keyframes } from 'styled-components'
 import ChartBar from './ChartBar'
 
@@ -162,22 +162,12 @@ const GradientAnimation = keyframes`
   }
 `
 
-const OpacityAnimation = keyframes`
-  0% {
-    opacity: .2;
-  }
-
-  100% {
-    opacity: 1;
-  }
-`
-
 const Section1 = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 85vh;
+  height: 78vh;
 `
 
 const StyledDownArrow = styled(ArrowDownIcon)`
@@ -196,12 +186,7 @@ const NeonTitle = styled.h1`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  animation: ${GradientAnimation} 4s linear infinite, ${OpacityAnimation} 1s ease-in;
-`
-const TextContainer = styled.div`
-  padding: 1rem;
-  border-radius: 10px;
-  border: 2px solid ${(props) => props.theme.border.default};
+  animation: ${GradientAnimation} 4s linear infinite;
 `
 
 const BrandSpan = styled.span`
