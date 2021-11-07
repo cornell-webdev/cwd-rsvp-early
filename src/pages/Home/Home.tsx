@@ -22,9 +22,9 @@ import Interested from './Interested'
 const Home = () => {
   const isDesktop = useIsDesktop()
   const daysSinceLaunch = Math.ceil(
-    (new Date().getTime() - new Date('2021-11-7').getTime()) / (1000 * 60 * 60 * 24)
+    (new Date().getTime() - new Date(2021, 10, 7).getTime()) / (1000 * 60 * 60 * 24)
   )
-  const interestedCount = daysSinceLaunch * 35 + Math.floor(Math.random() * 5)
+  const interestedCount = daysSinceLaunch * 21 + Math.ceil(Math.random() * 5)
 
   return (
     <Container>
