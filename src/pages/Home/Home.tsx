@@ -1,5 +1,4 @@
 import {
-  Button,
   FadeOnView,
   FlexContainer,
   Footer,
@@ -10,7 +9,7 @@ import {
   theme,
   useIsDesktop,
 } from 'cornell-glue-ui'
-import React, { useState } from 'react'
+import React from 'react'
 import { ReactComponent as ArrowDownIcon } from 'src/assets/arrow-down.svg'
 import { ReactComponent as IllustRSVP } from 'src/assets/illust-rsvp.svg'
 import { ReactComponent as QuoteSVG } from 'src/assets/quote.svg'
@@ -23,7 +22,7 @@ import Interested from './Interested'
 const Home = () => {
   const isDesktop = useIsDesktop()
   const daysSinceLaunch = Math.ceil(
-    (new Date().getTime() - new Date('2021-11-6').getTime()) / (1000 * 60 * 60 * 24)
+    (new Date().getTime() - new Date('2021-11-7').getTime()) / (1000 * 60 * 60 * 24)
   )
   const interestedCount = daysSinceLaunch * 35 + Math.floor(Math.random() * 5)
 
