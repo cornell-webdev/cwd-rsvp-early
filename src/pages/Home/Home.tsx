@@ -9,7 +9,7 @@ import {
   theme,
   useIsDesktop,
 } from 'cornell-glue-ui'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { ReactComponent as ArrowDownIcon } from 'src/assets/arrow-down.svg'
 import { ReactComponent as IllustRSVP } from 'src/assets/illust-rsvp.svg'
 import { ReactComponent as QuoteSVG } from 'src/assets/quote.svg'
@@ -21,10 +21,14 @@ import Interested from './Interested'
 
 const Home = () => {
   const isDesktop = useIsDesktop()
-  const daysSinceLaunch = Math.ceil(
-    (new Date().getTime() - new Date(2021, 10, 7).getTime()) / (1000 * 60 * 60 * 24)
-  )
-  const interestedCount = daysSinceLaunch * 21 + Math.ceil(Math.random() * 5)
+  const [interestedCount, setInterestedCount] = useState<number>(0)
+
+  useEffect(() => {
+    const daysSinceLaunch = Math.ceil(
+      (new Date().getTime() - new Date(2021, 10, 7).getTime()) / (1000 * 60 * 60 * 24)
+    )
+    setInterestedCount(daysSinceLaunch * 21 + Math.ceil(Math.random() * 5))
+  }, [])
 
   return (
     <Container>
