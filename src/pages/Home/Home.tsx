@@ -27,7 +27,7 @@ const Home = () => {
     const daysSinceLaunch = Math.ceil(
       (new Date().getTime() - new Date(2021, 10, 7).getTime()) / (1000 * 60 * 60 * 24)
     )
-    setInterestedCount(daysSinceLaunch * 21 + Math.ceil(Math.random() * 5))
+    setInterestedCount(Math.min(daysSinceLaunch, 11) * 21 + Math.ceil(Math.random() * 5))
   }, [])
 
   return (
